@@ -1,0 +1,424 @@
+/* --------------------------
+
+.contact-form-container
+  background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/giftly.png")
+  font-size: 1.6rem
+  font-family: "Open Sans", sans-serif
+  color: #2b3e51
+  background-color: #ffffff
+
+a
+  color: #2c97de
+  text-decoration: none
+
+/* -------------------------------- 
+ *
+ *Form
+ *
+ *--------------------------------
+
+.cd-form
+  width: 90%
+  max-width: 600px
+  margin: 0 auto
+  padding: 5% 0
+
+  &::after
+    clear: both
+    content: ""
+    display: table
+
+  fieldset
+    margin: 0px 0
+
+  legend
+    padding-bottom: 10px
+    margin-bottom: 20px
+    font-size: 2rem
+    border-bottom: 1px solid #dc6900
+
+  div
+    /* form element wrapper
+    position: relative
+    margin: 20px 0
+
+  h4
+    font-size: 1.3rem
+    color: #94aab0
+    margin-bottom: 10px
+
+  .cd-label
+    font-size: 1.3rem
+    color: #94aab0
+    margin-bottom: 10px
+    display: block
+
+  input, textarea, select, label
+    font-family: "Open Sans", sans-serif
+    font-size: 1.6rem
+    color: #2b3e51
+
+  input
+    &[type="text"], &[type="email"]
+      display: block
+      width: 100%
+      -webkit-appearance: none
+      -moz-appearance: none
+      -ms-appearance: none
+      -o-appearance: none
+      appearance: none
+
+  textarea, select, legend
+    display: block
+    width: 100%
+    -webkit-appearance: none
+    -moz-appearance: none
+    -ms-appearance: none
+    -o-appearance: none
+    appearance: none
+
+  input
+    &[type="text"], &[type="email"]
+      /* general style for input elements
+      padding: 12px
+      border: 1px solid #cfd9db
+      background-color: #ffffff
+      border-radius: .25em
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08)
+
+  textarea, select
+    /* general style for input elements
+    padding: 12px
+    border: 1px solid #cfd9db
+    background-color: #ffffff
+    border-radius: .25em
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08)
+
+  input
+    &[type="text"]:focus, &[type="email"]:focus
+      outline: none
+      border-color: #2c97de
+      box-shadow: 0 0 5px rgba(44, 151, 222, 0.2)
+
+  textarea:focus, select:focus
+    outline: none
+    border-color: #2c97de
+    box-shadow: 0 0 5px rgba(44, 151, 222, 0.2)
+
+  .cd-select
+    /* select element wapper
+    position: relative
+
+    &::after
+      /* arrow icon for select element
+      content: ''
+      position: absolute
+      z-index: 1
+      right: 16px
+      top: 50%
+      margin-top: -8px
+      display: block
+      width: 16px
+      height: 16px
+      background: url("../img/cd-icon-arrow.svg") no-repeat center center
+      pointer-events: none
+
+  select
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08)
+    cursor: pointer
+
+    &::-ms-expand
+      display: none
+
+  .cd-form-list
+    margin-top: 16px
+
+    &::after
+      clear: both
+      content: ""
+      display: table
+
+    li
+      /* wrapper for radio and checkbox input types
+      display: inline-block
+      position: relative
+      -webkit-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+      margin: 0 26px 16px 0
+      float: left
+
+  input
+    &[type=radio], &[type=checkbox]
+      /* hide original check and radio buttons
+      position: absolute
+      left: 0
+      top: 50%
+      -webkit-transform: translateY(-50%)
+      -moz-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      -o-transform: translateY(-50%)
+      transform: translateY(-50%)
+      margin: 0
+      padding: 0
+      opacity: 0
+      z-index: 2
+
+    &[type="radio"] + label, &[type="checkbox"] + label
+      padding-left: 24px
+
+    &[type="radio"] + label
+      &::before, &::after
+        /* custom radio and check boxes
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        top: 50%
+        margin-top: -8px
+        width: 16px
+        height: 16px
+
+    &[type="checkbox"] + label
+      &::before, &::after
+        /* custom radio and check boxes
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        top: 50%
+        margin-top: -8px
+        width: 16px
+        height: 16px
+
+    &[type="radio"] + label::before, &[type="checkbox"] + label::before
+      border: 1px solid #cfd9db
+      background: #ffffff
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08)
+
+    &[type="radio"] + label
+      &::before, &::after
+        border-radius: 50%
+
+    &[type="checkbox"] + label
+      &::before, &::after
+        border-radius: .25em
+
+    &[type="radio"] + label::after, &[type="checkbox"] + label::after
+      background-color: #2c97de
+      background-position: center center
+      background-repeat: no-repeat
+      box-shadow: 0 0 5px rgba(44, 151, 222, 0.4)
+      display: none
+
+    &[type="radio"] + label::after
+      /* custom image for radio button
+      background-image: url("../img/cd-icon-radio.svg")
+
+    &[type="checkbox"] + label::after
+      /* custom image for checkbox
+      background-image: url("../img/cd-icon-check.svg")
+
+    &[type="radio"]:focus + label::before, &[type="checkbox"]:focus + label::before
+      /* add focus effect for radio and check buttons
+      box-shadow: 0 0 5px rgba(44, 151, 222, 0.6)
+
+    &[type="radio"]:checked + label::after, &[type="checkbox"]:checked + label::after
+      display: block
+
+    &[type="radio"]:checked + label
+      &::before, &::after
+        -webkit-animation: cd-bounce 0.3s
+        -moz-animation: cd-bounce 0.3s
+        animation: cd-bounce 0.3s
+
+    &[type="checkbox"]:checked + label
+      &::before, &::after
+        -webkit-animation: cd-bounce 0.3s
+        -moz-animation: cd-bounce 0.3s
+        animation: cd-bounce 0.3s
+
+  textarea
+    min-height: 200px
+    resize: vertical
+    overflow: auto
+
+  input[type="submit"]
+    /* button style
+    border: none
+    background: #2c97de
+    border-radius: .25em
+    padding: 16px 20px
+    color: #ffffff
+    font-weight: bold
+    float: right
+    cursor: pointer
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -webkit-appearance: none
+    -moz-appearance: none
+    -ms-appearance: none
+    -o-appearance: none
+    appearance: none
+
+.no-touch .cd-form input[type="submit"]:hover
+  background: #42a2e1
+
+.cd-form
+  input[type="submit"]
+    &:focus
+      outline: none
+      background: #2b3e51
+
+    &:active
+      -webkit-transform: scale(0.9)
+      -moz-transform: scale(0.9)
+      -ms-transform: scale(0.9)
+      -o-transform: scale(0.9)
+      transform: scale(0.9)
+
+  [required]
+    background: url("../img/cd-required.svg") no-repeat top right
+
+  .error-message p
+    background: #e94b35
+    color: #ffffff
+    font-size: 1.4rem
+    text-align: center
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    border-radius: .25em
+    padding: 16px
+
+  .error
+    border-color: #e94b35 !important
+
+  .icon
+    input, select, textarea
+      padding-left: 54px !important
+
+  .user
+    background: url("https://c094462714bf1594d2c80267863d79c16192d91e-www.googledrive.com/host/0ByJW3SaRNAEaYkJPYUpwR1ljVEE") no-repeat 16px center
+
+  [required].user
+    background: url("https://3cc4fedd8d2de8bdfc7f6aa49bb5bc21cf8ea790-www.googledrive.com/host/0ByJW3SaRNAEaYkJPYUpwR1ljVEE") no-repeat 16px center, url("https://c094462714bf1594d2c80267863d79c16192d91e-www.googledrive.com/host/0ByJW3SaRNAEaOWw5Q05COEFOeHM") no-repeat top right
+    background-color: #fff
+
+  .company
+    background: url("https://8a6b9ccdaac789142149b952b03d80ede11246da-www.googledrive.com/host/0ByJW3SaRNAEadlZqYi0yeVBuN0U") no-repeat 16px center
+
+  [required].company
+    background: url("https://8a6b9ccdaac789142149b952b03d80ede11246da-www.googledrive.com/host/0ByJW3SaRNAEadlZqYi0yeVBuN0U") no-repeat 16px center, url("https://c094462714bf1594d2c80267863d79c16192d91e-www.googledrive.com/host/0ByJW3SaRNAEaOWw5Q05COEFOeHM") no-repeat top right
+
+  .email
+    background: url("https://d8581748599329c3d92230c1c57d2af060df9015-www.googledrive.com/host/0ByJW3SaRNAEaa21VS2JDRVY5a28") no-repeat 16px center
+
+  [required].email
+    background: url("https://d8581748599329c3d92230c1c57d2af060df9015-www.googledrive.com/host/0ByJW3SaRNAEaa21VS2JDRVY5a28") no-repeat 16px center, url("https://c094462714bf1594d2c80267863d79c16192d91e-www.googledrive.com/host/0ByJW3SaRNAEaOWw5Q05COEFOeHM") no-repeat top right
+    background-color: #fff
+
+  .budget
+    background: url("https://c094462714bf1594d2c80267863d79c16192d91e-www.googledrive.com/host/0ByJW3SaRNAEaOWw5Q05COEFOeHM") no-repeat 16px center
+
+  .message
+    background: url("https://a3aa19da3621e49f5f2343a5e4068c3ce20a7b8d-www.googledrive.com/host/0ByJW3SaRNAEaZTlHZFBDM1JiY3M") no-repeat 16px 16px
+    background: #fff
+
+  [required].message
+    background: url("https://a3aa19da3621e49f5f2343a5e4068c3ce20a7b8d-www.googledrive.com/host/0ByJW3SaRNAEaZTlHZFBDM1JiY3M") no-repeat 16px 16px, url("https://c094462714bf1594d2c80267863d79c16192d91e-www.googledrive.com/host/0ByJW3SaRNAEaOWw5Q05COEFOeHM") no-repeat top right
+    background-color: #fff
+
+@media only screen and (min-width: 600px)
+  .cd-form
+    div
+      /* form element wrapper
+      margin: 32px 0
+
+    legend + div
+      /* reduce margin-top for first form element after the legend
+      margin-top: 20px
+
+    h4, .cd-label
+      font-size: 1.4rem
+      margin-bottom: 10px
+
+    input
+      &[type="text"], &[type="email"]
+        padding: 16px
+
+    textarea, select
+      padding: 16px
+
+@-webkit-keyframes cd-bounce
+  0%, 100%
+    -webkit-transform: scale(1)
+
+  50%
+    -webkit-transform: scale(0.8)
+
+@-moz-keyframes cd-bounce
+  0%, 100%
+    -moz-transform: scale(1)
+
+  50%
+    -moz-transform: scale(0.8)
+
+@keyframes cd-bounce
+  0%, 100%
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -ms-transform: scale(1)
+    -o-transform: scale(1)
+    transform: scale(1)
+
+  50%
+    -webkit-transform: scale(0.8)
+    -moz-transform: scale(0.8)
+    -ms-transform: scale(0.8)
+    -o-transform: scale(0.8)
+    transform: scale(0.8)
+
+/* -------------------------------- 
+ *
+ *Custom icons
+ *
+ *--------------------------------
+
+/* -------------------------------- 
+ *
+ *FLoating labels 
+ *
+ *--------------------------------
+
+.js .floating-labels
+  div
+    margin: 28px 0
+
+  .cd-label
+    position: absolute
+    top: 16px
+    left: 16px
+    font-size: 1.6rem
+    cursor: text
+    -webkit-transition: top 0.2s, left 0.2s, font-size 0.2s
+    -moz-transition: top 0.2s, left 0.2s, font-size 0.2s
+    transition: top 0.2s, left 0.2s, font-size 0.2s
+
+  .icon .cd-label
+    left: 56px
+
+  .cd-label.float
+    /* move label out the input field
+    font-size: 1.2rem
+    top: -16px
+    left: 0 !important
+
+@media only screen and (min-width: 600px)
+  .js .floating-labels
+    legend + div
+      /* reduce margin-top for first form element after the legend
+      margin-top: 16px
+
+    .cd-label
+      top: 20px

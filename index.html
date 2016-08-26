@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/styles.css">
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+        <!-- app assets -->
+         <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <script src="https://use.fontawesome.com/4bdcf729a6.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    </head>
     <body ng-app="app">
     <div class="container-fluid top-bar-container">
         <h1 class="logo" href="#/home">Ufolio</h1>
@@ -11,15 +23,106 @@
             <button class="the-button blue-bg">Login!</button>
         </div>
     </div>
-    <div class="container-fluid secondary-bar-container">
-        <div class="nav">
-            <div class="nav-item"><i aria-hidden="true" class="fa fa-home"></i><a href="#/home">Home</a></div>
-            <div class="nav-item"><i aria-hidden="true" class="fa fa-user"></i><a href="#/userProfile">Account</a></div>
+    <div class="container secondary-bar-container">
+      <div class="nav">
+        <div class="nav-tems-container">
+          <div class="nav-item"><i aria-hidden="true" class="fa fa-home"></i><a>Home</a></div>
+          <div class="nav-item"><i aria-hidden="true" class="fa fa-user"></i><a>Account</a></div>
         </div>
+        <div class="filters-container">
+          <div class="dropdown filter">
+            <button id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default dropdown-toggle">College<span class="caret"></span></button>
+            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
+              <li><a href="#">ULACIT</a></li>
+              <li><a href="#">TEC</a></li>
+              <li><a href="#">UCR</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Universidad Nacional</a></li>
+            </ul>
+          </div>
+          <div class="dropdown filter">
+            <button id="dropdownMenu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default dropdown-toggle">Career<span class="caret"></span></button>
+            <ul aria-labelledby="dropdownMenu2" class="dropdown-menu">
+              <li><a href="#">Accounting</a></li>
+              <li><a href="#">Computer Engineering</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <div ng-view>
+
+    <!-- <div ng-view> -->
         <!--Here's where everything appears-->
-    </div>
+    <!-- </div> -->
+<div class="pricing-container">
+  <header class="cd-header">
+    <h1>Pricing</h1>
+  </header>
+  <div class="cd-pricing-container">
+    <ul class="cd-pricing-list">
+      <li>
+        <header class="cd-pricing-header">
+          <h2>Basic</h2>
+          <div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">5</span><span class="cd-duration">mo</span></div>
+        </header>
+        <!-- .cd-pricing-header-->
+        <div class="cd-pricing-body">
+          <ul class="cd-pricing-features">
+            <li><em>100</em> Portfolio Items</li>
+            <li><em>Slack</em> Integration</li>
+            <li><em>Github</em> Integration</li>
+            <li><em>1</em> Email account</li>
+            <li><em>Employment </em> exchange platform</li>
+          </ul>
+        </div>
+        <!-- .cd-pricing-body-->
+        <footer class="cd-pricing-footer"><a href="#" class="cd-select">Select</a></footer>
+        <!-- .cd-pricing-footer-->
+      </li>
+      <li class="cd-popular">
+        <header class="cd-pricing-header">
+          <h2>Popular</h2>
+          <div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">15</span><span class="cd-duration">mo</span></div>
+        </header>
+        <!-- .cd-pricing-header-->
+        <div class="cd-pricing-body">
+          <ul class="cd-pricing-features">
+            <li><em>200</em> Portfolio Items</li>
+            <li><em>Slack</em> Integration</li>
+            <li><em>Github</em> Integration</li>
+            <li><em>5</em> Email accounts</li>
+            <li><em>Employment</em> exchange platform</li>
+            <li><em></em></li>
+          </ul>
+        </div>
+        <!-- .cd-pricing-body-->
+        <footer class="cd-pricing-footer"><a href="#" class="cd-select">Select</a></footer>
+        <!-- .cd-pricing-footer-->
+      </li>
+      <li>
+        <header class="cd-pricing-header">
+          <h2>Premier</h2>
+          <div class="cd-price"><span class="cd-currency">$</span><span class="cd-value">30</span><span class="cd-duration">mo</span></div>
+        </header>
+        <!-- .cd-pricing-header-->
+        <div class="cd-pricing-body">
+          <ul class="cd-pricing-features">
+            <li><em>Unlimited</em> Portfolio Items</li>
+            <li><em>Slack</em> Integration</li>
+            <li><em>Github</em> Integration</li>
+            <li><em>10</em> Email accounts</li>
+            <li><em>Employment</em> exchange platform</li>
+          </ul>
+        </div>
+        <!-- .cd-pricing-body-->
+        <footer class="cd-pricing-footer"><a href="#" class="cd-select">Select</a></footer>
+        <!-- .cd-pricing-footer-->
+      </li>
+    </ul>
+    <!-- .cd-pricing-list-->
+  </div>
+  <!-- .cd-pricing-container-->
+</div>
     <footer>
         <div class="footer-items">
             <p>Ufolio the best place to share your work.</p>
