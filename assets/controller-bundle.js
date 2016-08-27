@@ -12,19 +12,8 @@ app.controller('homeController',
         $scope.changeSearchedUser = function (userId){
             sharedProperties.setSearchedUser(userId);
         }
-    }
-);
 
-app.controller('userProfileController',
-    function ($scope, UsuarioService, sharedProperties) {
-
-        $scope.buscarUsuario = function () {
-            UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
-                $scope.user = response;
-            });
-        }
-
-        $scope.randomClassSize = function () {
+         $scope.randomClassSize = function () {
             var randomNumber = Math.random();
             if(randomNumber < 0.3){
                 return 'card';
@@ -32,26 +21,70 @@ app.controller('userProfileController',
                 return 'card card-medium';
             } else if (randomNumber < 1){
                 return 'card card-large';
-            }
+            }else return '';
         }
+
+
+        $scope.goToProfile = function(id)
+        {
+            if(!id) alert("UPS! Usuario invalido");
+            sharedProperties.setSearchedUser(id);
+            $location.path('userProfile');
+
+        }
+
+    }
+);
+
+app.controller('userProfileController',
+    function ($scope, UsuarioService, sharedProperties, URLS) {
+
+        $scope.buscarUsuario = function () {
+            UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
+                $scope.user = response;
+            });
+        }
+
+       
+
+
+        $scope.range = function(min, max, step) {
+            step = step || 1;
+            var input = [];
+            for (var i = min; i <= max; i += step) {
+                input.push(i);
+            }
+            return input;
+        };
     }
 );
 
 app.controller('registerController',
-    function ($scope, UsuarioService, sharedProperties) {
+    function ($scope, $location, UsuarioService, sharedProperties) {
 
-        $scope.registrarUsuario = function () {
+        $scope.iniRegister = function () {
+            if (sharedProperties.getIsUserLogged()) {
+                $location.path("#/");
+            }
+        }
+
+        $scope.registrarUsuario = function (name, lastName, faculty, career, email, password) {
             var body = {
-                "nombre *": "Brad",
-                "apellidos *": "Guillen",
-                "facultad": "ingenieria",
-                "carrera": "informatica",
-                "correo*": "bradguillen@gmail.com",
-                "contrasena*": "asd"
+                "nombre": name,
+                "apellidos": lastName,
+                "facultad": faculty,
+                "carrera": career,
+                "correo": email,
+                "contrasena": password
             };
 
-            UsuarioService.registrarUsuario(body, function (response) {
-                return response;
+             UsuarioService.registrarUsuario(body, function (response) {
+                if(response.valido){
+                    alert('Se ha registrado exitosamente');
+                    $location.path("#/");
+                } else {
+                    alert('Ha habido un error');
+                }
             });
         }
     });
@@ -60,10 +93,8 @@ app.controller('loginController',
     function ($scope, $location, UsuarioService, sharedProperties) {
 
         $scope.initLogin = function () {
-            if (sharedProperties.getUserIsloged()) {
+            if (sharedProperties.getIsUserLogged()) {
                 $location.path("#/");
-            } else {
-                $location.path("#/login");
             }
         }
 
@@ -75,9 +106,9 @@ app.controller('loginController',
 
             /*UsuarioService.logearUsuario(body, function (response) {
                 if(response.valido){*/
-                    sharedProperties.setactualUser(/*response.user.id*/'1');
+                    sharedProperties.setActualUser(/*response.user.id*/'1');
                     sharedProperties.setSearchedUser(/*response.user.id*/'1');
-                    sharedProperties.setUserIsloged(true);
+                    sharedProperties.setIsUserLogged(true);
                     $location.path("#/");
                 /*} else {
                     alert("Email or password incorrect");

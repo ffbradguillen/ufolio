@@ -1,5 +1,6 @@
 app.constant('URLS', {
 	backendURL: 'http://default-environment.mqcicakiqj.us-west-2.elasticbeanstalk.com/',
+	//backendURL: 'http://localhost/PortafolioUlacit/public/',
 	usuario: {
 		listarUsuarios: 'usuario/listar',
 		buscar: 'usuario/buscar/',

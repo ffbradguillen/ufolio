@@ -1,23 +1,23 @@
 
 app.controller('userProfileController',
-    function ($scope, UsuarioService, sharedProperties) {
+    function ($scope, UsuarioService, sharedProperties, URLS) {
 
         $scope.buscarUsuario = function () {
-            alert(sharedProperties.getSearchedUser());
             UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
                 $scope.user = response;
             });
         }
 
-        $scope.randomClassSize = function () {
-            var randomNumber = Math.random();
-            if(randomNumber < 0.3){
-                return 'card';
-            } else if (randomNumber < 0.6){
-                return 'card card-medium';
-            } else if (randomNumber < 1){
-                return 'card card-large';
+       
+
+
+        $scope.range = function(min, max, step) {
+            step = step || 1;
+            var input = [];
+            for (var i = min; i <= max; i += step) {
+                input.push(i);
             }
-        }
+            return input;
+        };
     }
 );

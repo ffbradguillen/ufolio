@@ -13,6 +13,21 @@
     box-sizing: border-box; }
 
 /* --------------- */
+.avatar {
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  position: relative;
+  margin-left: 15px; }
+
+.user {
+  padding: 20px;
+  margin: 20px;
+  float: left; }
+
 .top-bar-container {
   background: #dc6900;
   min-heignt: 100px;

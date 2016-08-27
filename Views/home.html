@@ -1,36 +1,23 @@
 <div ng-controller="homeController" ng-init="listarUsuarios()">
-    <div ng-repeat="user in userList.users">
-        <a href="#/userProfile" ng-click="changeSearchedUser(user.id)">Go to profile</a>
-        <p>Id: {{user.id}}</p>
-        <p>Nombre: {{user.nombre}}</p>
-        <p>Apellidos: {{user.apellidos}}</p>
-        <p>Facultad: {{user.facultad}}</p>
-        <p>Carrera: {{user.carrera}}</p>
-        <p>Correo: {{user.correo}}</p>
-        <p>Contrasena: {{user.contrasena}}</p>
-        <p>Foto: {{user.foto}}</p>
-        <p>Acerca: {{user.acerca}}</p>
-        <p>experiencia: {{user.experiencia}}</p>
-        <p>telefono: {{user.telefono}}</p>
-        <p>Intereses</p>
-        <ul>
-            <li ng-repeat="interes in user.intereses">
-                {{interes}}
-            </li>
-        </ul>
-        <p>Proyectos</p>
-        <ul>
-            <li ng-repeat="proyecto in user.proyectos">
-                <p>Id: {{proyecto.id}}</p>
-                <p>Usuario Id: {{proyecto.usuario_id}}</p>
-                <p>File: {{proyecto.file}}</p>
-                <p>Icon: {{proyecto.icon}}</p>
-            </li>
-        </ul>
-        <div class="user">
-            <img class="avatar" ng-src="{{myVar}}"><br>
-            <label align="center">{{user.user.nombre}}</label><br>
-            <label align="center">{{user.user.carrera}}</label>
-        </div>
+        <div class="content-container">
+          <div class="container">
+            <div class="cards-container">
+
+    
+              <div ng-repeat="user in userList.users">
+
+                  <div class="card {{ randomClassSize() }}" ng-click="goToProfile(user.id)">
+                    <div class="title-card">
+                      <h6>Mi proyecto</h6>
+                    </div>
+                    <div class="content-card"><img src="https://assets.entrepreneur.com/content/16x9/822/1409156187-this-one-word-will-always-stifle-creativity.jpg"/></div>
+                    <div class="footer-card"><span>By {{user.nombre}} {{user.apellidos}}</span>
+                      <div class="card-actions"><i aria-hidden="true" class="fa fa-heart"></i><i aria-hidden="true" class="fa fa-facebook"></i><i aria-hidden="true" class="fa fa-twitter"></i></div>
+                    </div>
+                  </div>  
+                   
+              </div>
+            </div>
+          </div>
         </div>
 </div>
