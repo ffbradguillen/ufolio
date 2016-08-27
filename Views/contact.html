@@ -1,15 +1,12 @@
 <div class="contact-form-container">
-<form class="cd-form floating-labels">
+<form class="cd-form floating-labels" ng-submit="enviar()">
 		<fieldset>
 			<legend>Get in touch!</legend>
 
-			<div class="error-message">
-				<p>Please enter a valid email address</p>
-			</div>
 
 			<div class="icon">
 				<label class="cd-label" for="cd-name">Name</label>
-				<input class="user" type="text" name="cd-name" id="cd-name" required>
+				<input class="company" style="background-color: white;" type="text" name="cd-name" id="cd-name" required>
 		    </div> 
 
 		    <div class="icon">
@@ -19,7 +16,7 @@
 
 		    <div class="icon">
 		    	<label class="cd-label" for="cd-email">Email</label>
-				<input class="email error" type="email" name="cd-email" id="cd-email" required>
+				<input class="email" type="email" name="cd-email" id="cd-email" required>
 		    </div>
 		</fieldset>
 
@@ -32,6 +29,7 @@
 			<div>
 		      	<input type="submit" value="Send Message">
 		    </div>
+
 		</fieldset>
 	</form>
 </div>

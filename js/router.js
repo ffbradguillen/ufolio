@@ -29,7 +29,7 @@ app.config(function($routeProvider) {
             caseInsensitiveMatch: true
         })
         .when('/contact',{
-            controller: 'contactController',
+            controller: 'contactoController',
             controllerAs: 'contact',
             templateUrl: 'Views/contact.html',
             caseInsensitiveMatch: true

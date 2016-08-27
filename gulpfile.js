@@ -3,6 +3,7 @@ var  controllersList = [
   'js/controllers/userProfileController.js',
   'js/controllers/registerController.js',
   'js/controllers/loginController.js',
+  'js/controllers/contactoController.js',
 ];
 
 var  servicesList = [
