@@ -39,6 +39,8 @@ app.controller('homeController',
 app.controller('userProfileController',
     function ($scope, UsuarioService, sharedProperties, URLS) {
 
+        $scope.profileOwner = (sharedProperties.getSearchedUser() == sharedProperties.getActualUser()) || (sharedProperties.getSearchedUser() == '');
+
         $scope.buscarUsuario = function () {
             UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
                 $scope.user = response;
@@ -100,8 +102,8 @@ app.controller('loginController',
 
         $scope.logearUsuario = function (email, password) {
             var body = {
-                "correo*": email,
-                "contrasena*": password
+                "correo": email,
+                "contrasena": password
             };
 
             /*UsuarioService.logearUsuario(body, function (response) {

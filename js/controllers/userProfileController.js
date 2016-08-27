@@ -2,6 +2,8 @@
 app.controller('userProfileController',
     function ($scope, UsuarioService, sharedProperties, URLS) {
 
+        $scope.profileOwner = (sharedProperties.getSearchedUser() == sharedProperties.getActualUser()) || (sharedProperties.getSearchedUser() == '');
+
         $scope.buscarUsuario = function () {
             UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
                 $scope.user = response;

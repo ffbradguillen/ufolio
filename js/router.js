@@ -28,5 +28,23 @@ app.config(function($routeProvider) {
             templateUrl: 'Views/login.html',
             caseInsensitiveMatch: true
         })
+        .when('/contact',{
+            controller: 'contactController',
+            controllerAs: 'contact',
+            templateUrl: 'Views/contact.html',
+            caseInsensitiveMatch: true
+        })
+        .when('/membership',{
+            controller: 'membershipController',
+            controllerAs: 'membership',
+            templateUrl: 'Views/membership.html',
+            caseInsensitiveMatch: true
+        })
+        .when('/shop',{
+            controller: 'shopController',
+            controllerAs: 'shop',
+            templateUrl: 'Views/shop.html',
+            caseInsensitiveMatch: true
+        })
         .otherwise('/');
 });
