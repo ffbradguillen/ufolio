@@ -18,7 +18,7 @@
         <div class="container">
             <div class="container_profile">
                 <div class="profile_file">
-                    <div ng-if="!user.user.proyectos"><b>Lo siento! Aun no tengo proyectos</b></div>
+                    <div ng-if="user.user.proyectos.length == 0"><b>Lo siento! Aun no tengo proyectos</b></div>
                     <div ng-repeat="proyecto in user.user.proyectos" class="ng-class: randomClassSize">
                         <p><b>File: </b><a href="http://localhost/PortafolioUlacit/public/file/download/{{proyecto.file}}"><i class="fa fa-file" aria-hidden="true"></i></a></p><br>
                         <p><b>Icon: </b> {{proyecto.icon}}</p>

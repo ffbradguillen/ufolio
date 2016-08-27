@@ -13,9 +13,6 @@
   margin: 20px
   float: left
 
-
-
-
 .top-bar-container
   background: #dc6900
   min-heignt: 100px
@@ -85,6 +82,8 @@
   column-count: 4
   column-gap: 1em
   //height: auto
+  @media (max-width: 768px)
+    column-count: 2
 .card
   min-height: 200px
   width: 100%
@@ -163,13 +162,10 @@ footer
   flex-direction: row
   align-items: center
   justify-content: space-around
-
   p
     padding: 5px
     font-family: 'Pacifico', cursive
     color: #000
-    
-.to-right
-  //float: right
-  //align-self: flex-end
-  //margin-right: auto
+.on-right
+  @media (max-width: 320px)
+    display: none
