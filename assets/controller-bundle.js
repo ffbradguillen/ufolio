@@ -57,15 +57,21 @@ app.controller('registerController',
     });
 
 app.controller('loginController',
-    function ($scope, UsuarioService, sharedProperties) {
-        $scope.logearUsuario = function () {
+    function ($scope, $location, UsuarioService, sharedProperties) {
+        $scope.logearUsuario = function (email, password) {
             var body = {
-                "correo*": "bradguillen@gmail.com",
-                "contrasena*": "asd"
+                "correo*": email,
+                "contrasena*": password
             };
 
-            UsuarioService.registrarUsuario(body, function (response) {
-                return response;
-            });
+            /*UsuarioService.logearUsuario(body, function (response) {
+                if(response.valido){*/
+                    sharedProperties.setactualUser(/*response.user.id*/'1');
+                    sharedProperties.setSearchedUser(/*response.user.id*/'1');
+                    $location.path("#/userProfile");
+                /*} else {
+                    alert("Email or password incorrect");
+                }
+            });*/
         }
 });

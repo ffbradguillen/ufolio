@@ -49,17 +49,57 @@ app.service('UsuarioService', function ($http, URLS) {
             }
         });
     }
+
+    this.actualizar = function (data, callback) {
+        $http({
+            method: 'POST',
+            url: URLS.backendURL + URLS.usuario.actualizar,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            data: data
+        }).then(function(response){
+            if (response.data && response.data.valido) {
+                return callback(response.data);
+            }
+        });
+    }
+
+    this.subirProyecto = function (data, callback) {
+        $http({
+            method: 'POST',
+            url: URLS.backendURL + URLS.usuario.proyecto.subir,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            data: data
+        }).then(function(response){
+            if (response.data && response.data.valido) {
+                return callback(response.data);
+            }
+        });
+    }
 });
 
 app.service('sharedProperties', function () {
 
+    this.actualUser = '';
     this.searchedUser = '';
+
     return {
         getSearchedUser: function () {
             return searchedUser;
         },
         setSearchedUser: function(userId) {
             searchedUser = userId;
+        },
+        getactualUser: function () {
+            return actualUser;
+        },
+        setactualUser: function(userId) {
+            actualUser = userId;
         }
     };
 });

@@ -49,4 +49,36 @@ app.service('UsuarioService', function ($http, URLS) {
             }
         });
     }
+
+    this.actualizar = function (data, callback) {
+        $http({
+            method: 'POST',
+            url: URLS.backendURL + URLS.usuario.actualizar,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            data: data
+        }).then(function(response){
+            if (response.data && response.data.valido) {
+                return callback(response.data);
+            }
+        });
+    }
+
+    this.subirProyecto = function (data, callback) {
+        $http({
+            method: 'POST',
+            url: URLS.backendURL + URLS.usuario.proyecto.subir,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            data: data
+        }).then(function(response){
+            if (response.data && response.data.valido) {
+                return callback(response.data);
+            }
+        });
+    }
 });
