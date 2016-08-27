@@ -19,11 +19,18 @@ app.service('UsuarioService', function ($http, URLS) {
     }
 
     this.registrarUsuario = function (data, callback) {
-        $http.post(URLS.backendURL + URLS.usuario.registrar, data)
-            .then(function (response) {
-                if (response.data && response.data.valido) {
-                    return callback(response.data);
-                }
-            });
+        $http({
+            method: 'POST',
+            url: URLS.backendURL + URLS.usuario.registrar,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            data: data
+        }).then(function(response){
+            if (response.data && response.data.valido) {
+                return callback(response.data);
+            }
+        });
     }
 });
