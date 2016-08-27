@@ -1,7 +1,7 @@
 <div ng-controller="userProfileController" ng-init="buscarUsuario()">
     <div class="container-fluid user-bg"></div>
     <div class="user-intro">
-        <div class="user-portrait"><img src="http://www.gratisography.com/pictures/303_1.jpg"/></div>
+        <div class="user-portrait"><img ng-src="{{user.user.foto}}"/></div>
     </div>
     <div class="content-container top-adjustment">
         <div class="user-info">
@@ -18,31 +18,34 @@
         <div class="container">
             <div class="container_profile">
                 <div class="profile_file">
-                    <div ng-repeat="proyecto in user.user.proyectos" class="ng-class: randomClassSize">
+                    <div ng-repeat="proyecto in user.user.proyectos">
                         <p><b>File: </b> {{proyecto.file}}</p><br>
                         <p><b>Icon: </b> {{proyecto.icon}}</p>
                     </div>
                 </div>
                 <div class="aside_profile">
-                <div class="profile_about">
-                    <h6>About</h6>
-                    <div class="description">
-                        <p>{{user.user.acerca}}</p>
+                    <div class="profile_about">
+                        <h6>About</h6>
+                        <div class="description">
+                            <p>{{user.user.acerca}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="profile_experience">
-                    <h6>Experience</h6>
-                    <div class="description">
-                        <p>{{user.user.experiencia}}</p>
+                    <div class="profile_experience">
+                        <h6>Experience</h6>
+                        <div class="description">
+                            <p>{{user.user.experiencia}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="profile_concerns">
-                    <h6>Concerns</h6>
-                    <div class="description">
-                        <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
-                        <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
+                    <div class="profile_concerns">
+                        <h6>Concerns</h6>
+                        <div class="description">
+                            <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
+                            <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
+                        </div>
                     </div>
-                </div>
+                    <div class="profile_concerns">
+                        <h6><a href="#/contact">Contact me</a></h6>
+                    </div>
                 </div>
             </div>
         </div>

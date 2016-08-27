@@ -10,8 +10,8 @@ app.controller('loginController',
 
         $scope.logearUsuario = function (email, password) {
             var body = {
-                "correo*": email,
-                "contrasena*": password
+                "correo": email,
+                "contrasena": password
             };
 
             /*UsuarioService.logearUsuario(body, function (response) {

@@ -85,27 +85,31 @@ app.service('UsuarioService', function ($http, URLS) {
 
 app.service('sharedProperties', function () {
 
-    this.actualUser = '';
-    this.searchedUser = '';
-    this.userIsloged = false;
-    return {
-        getSearchedUser: function () {
-            return searchedUser;
-        },
-        setSearchedUser: function(userId) {
-            searchedUser = userId;
-        },
-        getactualUser: function () {
-            return actualUser;
-        },
-        setactualUser: function(userId) {
-            actualUser = userId;
-        },
-        getUserIsloged: function () {
-            return userIsloged;
-        },
-        setUserIsloged: function(userLogedFlag) {
-            userIsloged = userLogedFlag;
-        }
-    };
+    var actualUser = '';
+    var searchedUser = '';
+    var isUserLogged = false;
+
+    this.getSearchedUser = function () {
+        return searchedUser;
+    }
+
+    this.setSearchedUser = function (userId) {
+        searchedUser = userId;
+    }
+
+    this.getActualUser = function () {
+        return actualUser;
+    }
+
+    this.setActualUser = function (userId) {
+        actualUser = userId;
+    }
+
+    this.getIsUserLogged = function () {
+        return isUserLogged;
+    }
+
+    this.setIsUserLogged = function (userLoggedFlag) {
+        isUserLogged = userLoggedFlag;
+    }
 });
