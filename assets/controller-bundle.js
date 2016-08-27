@@ -23,10 +23,21 @@ app.controller('userProfileController',
                 $scope.user = response;
             });
         }
+
+        $scope.randomClassSize = function () {
+            var randomNumber = Math.random();
+            if(randomNumber < 0.3){
+                return 'card';
+            } else if (randomNumber < 0.6){
+                return 'card card-medium';
+            } else if (randomNumber < 1){
+                return 'card card-large';
+            }
+        }
     }
 );
 
-app.controller('registerUserController',
+app.controller('registerController',
     function ($scope, UsuarioService, sharedProperties) {
 
         $scope.registrarUsuario = function () {
@@ -43,18 +54,12 @@ app.controller('registerUserController',
                 return response;
             });
         }
-    }
-);
+    });
 
-var div3Controller = angular.module('app').controller('div3Controller', function ($scope, UsuarioService) {
-    $scope.variableDiv3 = 'this is a div3 variable';
-
-    $scope.registrarUsuario = function () {
+app.controller('loginController',
+    function ($scope, UsuarioService, sharedProperties) {
+        $scope.logearUsuario = function () {
             var body = {
-                "nombre *": "Brad",
-                "apellidos *": "Guillen",
-                "facultad": "ingenieria",
-                "carrera": "informatica",
                 "correo*": "bradguillen@gmail.com",
                 "contrasena*": "asd"
             };
@@ -63,5 +68,4 @@ var div3Controller = angular.module('app').controller('div3Controller', function
                 return response;
             });
         }
-
 });

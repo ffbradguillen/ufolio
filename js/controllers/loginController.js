@@ -1,13 +1,8 @@
 
-app.controller('registerController',
+app.controller('loginController',
     function ($scope, UsuarioService, sharedProperties) {
-
-        $scope.registrarUsuario = function () {
+        $scope.logearUsuario = function () {
             var body = {
-                "nombre *": "Brad",
-                "apellidos *": "Guillen",
-                "facultad": "ingenieria",
-                "carrera": "informatica",
                 "correo*": "bradguillen@gmail.com",
                 "contrasena*": "asd"
             };
@@ -16,4 +11,4 @@ app.controller('registerController',
                 return response;
             });
         }
-    });
+});

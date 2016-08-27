@@ -7,5 +7,10 @@ app.constant('URLS', {
 		actializar:  'usuario/actualizar',
 		subirProyecto: 'usuario/proyecto/subir',
 		buscarUsuario: 'usuario/buscar/',
+		logear: 'usuario/logear',
+		actualizar: 'usuario/actualizar',
+		proyecto: {
+			subir: 'usuario/proyecto/subir'
+		}
 	}
 });

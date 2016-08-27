@@ -33,6 +33,22 @@ app.service('UsuarioService', function ($http, URLS) {
             }
         });
     }
+
+    this.logearUsuario = function (data, callback) {
+        $http({
+            method: 'POST',
+            url: URLS.backendURL + URLS.usuario.logear,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            data: data
+        }).then(function(response){
+            if (response.data && response.data.valido) {
+                return callback(response.data);
+            }
+        });
+    }
 });
 
 app.service('sharedProperties', function () {

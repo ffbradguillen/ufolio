@@ -22,10 +22,10 @@ app.config(function($routeProvider) {
             templateUrl: 'Views/registerUser.html',
             caseInsensitiveMatch: true
         })
-        .when('/div3',{
-            controller: 'div3Controller',
-            controllerAs: 'div3',
-            templateUrl: 'Views/div3.html',
+        .when('/login',{
+            controller: 'loginController',
+            controllerAs: 'login',
+            templateUrl: 'Views/login.html',
             caseInsensitiveMatch: true
         })
         .otherwise('/');

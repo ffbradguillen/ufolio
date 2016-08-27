@@ -5,13 +5,13 @@
     </div>
     <div class="content-container top-adjustment">
         <div class="user-info">
-            <p class="name lead">Emma</p>
+            <p class="name lead">{{user.user.nombre}}</p>
             <div class="bg-wrapper">
-                <p>Photographer</p>
+                <p>{{user.user.carrera}}</p>
                 <div class="bg-opacity"></div>
             </div>
             <div class="bg-wrapper">
-                <p>emma@gmail.com</p>
+                <p>{{user.user.correo}}</p>
                 <div class="bg-opacity"></div>
             </div>
         </div>
@@ -19,28 +19,40 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="cards-container">
-                        <div class="card"></div>
-                        <div class="card card-medium"></div>
-                        <div class="card"></div>
-                        <div class="card card-medium"></div>
-                        <div class="card card-medium"></div>
-                        <div class="card"></div>
-                        <div class="card card-large"></div>
-                        <div class="card card-large"></div>
+                        <div ng-repeat="proyecto in user.user.proyectos" class="ng-class: randomClassSize">
+                            <p><b>File: </b> {{proyecto.file}}</p><br>
+                            <p><b>Icon: </b> {{proyecto.icon}}</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card-full-view">
                         <div class="title-card">
-                            <h6>Lorem Ipsum</h6>
+                            <h6>About</h6>
                         </div>
-                        <div class="content-card"><img src="https://assets.entrepreneur.com/content/16x9/822/1409156187-this-one-word-will-always-stifle-creativity.jpg"/>
-                            <div class="description">
-                                <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                            </div>
-                            <div class="footer-card"><span>By Kevin Arrieta</span>
-                                <div class="card-actions"><i aria-hidden="true" class="fa fa-heart"></i><i aria-hidden="true" class="fa fa-facebook"></i><i aria-hidden="true" class="fa fa-twitter"></i></div>
-                            </div>
+                        <div class="description">
+                            <p>{{user.user.acerca}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-full-view">
+                        <div class="title-card">
+                            <h6>Experience</h6>
+                        </div>
+                        <div class="description">
+                            <p>{{user.user.experiencia}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-full-view">
+                        <div class="title-card">
+                            <h6>Concerns</h6>
+                        </div>
+                        <div class="description">
+                            <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
+                            <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
                         </div>
                     </div>
                 </div>
