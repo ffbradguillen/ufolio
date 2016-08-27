@@ -1,9 +1,9 @@
-<div ng-controller="userProfileController" ng-init="initLogin()">
+<div ng-controller="loginController" ng-init="initLogin()">
   <div class="login-page">
     <div class="form">
       <form class="login-form">
-        <input type="text" placeholder="username" ng-model="email"/>
-        <input type="password" placeholder="password" ng-model="password"/>
+        <input type="text" placeholder="Username" ng-model="email"/>
+        <input type="password" placeholder="Password" ng-model="password"/>
         <button ng-click="logearUsuario(email, password)">Login</button>
         <p class="message">Not registered? <a href="#/register">Create an account</a></p>
       </form>

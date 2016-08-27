@@ -1,14 +1,16 @@
-<div class="login-page">
-  <div class="form">
-    <form class="login-form">
-      <input type="text" placeholder="Name"/>
-      <input type="text" placeholder="Last Name"/>
-      <input type="text" placeholder="Faculty"/>
-      <input type="text" placeholder="Career"/>
-      <input type="text" placeholder="email address"/>
-      <input type="password" placeholder="password"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#/login">Sign In</a></p>
-    </form>
+<div ng-controller="registerController" ng-init="iniRegister()">
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" placeholder="Name" ng-model="name"/>
+        <input type="text" placeholder="Last Name" ng-model="lastName"/>
+        <input type="text" placeholder="Faculty" ng-model="faculty"/>
+        <input type="text" placeholder="Career" ng-model="career"/>
+        <input type="text" placeholder="Email" ng-model="email"/>
+        <input type="password" placeholder="Password" ng-model="password"/>
+        <button ng-click="registrarUsuario(name, lastName, faculty, career, email, password)">Create</button>
+        <p class="message">Already registered? <a href="#/login">Sign In</a></p>
+      </form>
+    </div>
   </div>
 </div>

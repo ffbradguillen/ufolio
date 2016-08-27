@@ -3,10 +3,8 @@ app.controller('loginController',
     function ($scope, $location, UsuarioService, sharedProperties) {
 
         $scope.initLogin = function () {
-            if (sharedProperties.getUserIsloged()) {
+            if (sharedProperties.getIsUserLogged()) {
                 $location.path("#/");
-            } else {
-                $location.path("#/login");
             }
         }
 
@@ -18,9 +16,9 @@ app.controller('loginController',
 
             /*UsuarioService.logearUsuario(body, function (response) {
                 if(response.valido){*/
-                    sharedProperties.setactualUser(/*response.user.id*/'1');
+                    sharedProperties.setActualUser(/*response.user.id*/'1');
                     sharedProperties.setSearchedUser(/*response.user.id*/'1');
-                    sharedProperties.setUserIsloged(true);
+                    sharedProperties.setIsUserLogged(true);
                     $location.path("#/");
                 /*} else {
                     alert("Email or password incorrect");

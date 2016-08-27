@@ -17,8 +17,8 @@ app.config(function($routeProvider) {
             caseInsensitiveMatch: true
         })
         .when('/register',{
-            controller: 'registerUserController',
-            controllerAs: 'registerUser',
+            controller: 'registerController',
+            controllerAs: 'register',
             templateUrl: 'Views/register.html',
             caseInsensitiveMatch: true
         })

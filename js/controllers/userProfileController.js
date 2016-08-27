@@ -3,6 +3,7 @@ app.controller('userProfileController',
     function ($scope, UsuarioService, sharedProperties) {
 
         $scope.buscarUsuario = function () {
+            alert(sharedProperties.getSearchedUser());
             UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
                 $scope.user = response;
             });
