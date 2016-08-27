@@ -179,24 +179,22 @@ footer {
   align-content: center;
   position: relative;
   margin: 2em auto 1em;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: hidden; }
 
 .profile_file {
-  width: 25%;
-  position: relative;
+  width: 45%;
   margin: 2em auto 1em;
   box-sizing: border-box;
   float: left;
-  background-color: #00e20a;
-  margin-right: 20px; }
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px; }
 
 .aside_profile {
-  float: left;
-  width: 25%;
-  align-content: center;
-  position: relative;
-  margin: 2em auto 1em;
-  box-sizing: border-box; }
+  float: right;
+  width: 45%; }
 
 .profile_about {
   background-color: rgba(0, 0, 0, 0.4);
