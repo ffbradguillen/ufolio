@@ -16,44 +16,31 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="cards-container">
-                        <div ng-repeat="proyecto in user.user.proyectos" class="ng-class: randomClassSize">
-                            <p><b>File: </b> {{proyecto.file}}</p><br>
-                            <p><b>Icon: </b> {{proyecto.icon}}</p>
-                        </div>
+            <div class="container_profile">
+                <div class="profile_file">
+                    <div ng-repeat="proyecto in user.user.proyectos" class="ng-class: randomClassSize">
+                        <p><b>File: </b> {{proyecto.file}}</p><br>
+                        <p><b>Icon: </b> {{proyecto.icon}}</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card-full-view">
-                        <div class="title-card">
-                            <h6>About</h6>
-                        </div>
-                        <div class="description">
-                            <p>{{user.user.acerca}}</p>
-                        </div>
+                <div class="profile_icon"></div>
+                <div class="profile_about">
+                    <h6>About</h6>
+                    <div class="description">
+                        <p>{{user.user.acerca}}</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card-full-view">
-                        <div class="title-card">
-                            <h6>Experience</h6>
-                        </div>
-                        <div class="description">
-                            <p>{{user.user.experiencia}}</p>
-                        </div>
+                <div class="profile_experience">
+                    <h6>Experience</h6>
+                    <div class="description">
+                        <p>{{user.user.experiencia}}</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card-full-view">
-                        <div class="title-card">
-                            <h6>Concerns</h6>
-                        </div>
-                        <div class="description">
-                            <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
-                            <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
-                        </div>
+                <div class="profile_concerns">
+                    <h6>Concerns</h6>
+                    <div class="description">
+                        <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
+                        <p ng-repeat="interes in user.user.intereses">{{interes}}</p>
                     </div>
                 </div>
             </div>
