@@ -3,7 +3,7 @@ app.service('sharedProperties', function () {
 
     this.actualUser = '';
     this.searchedUser = '';
-
+    this.userIsloged = false;
     return {
         getSearchedUser: function () {
             return searchedUser;
@@ -16,6 +16,12 @@ app.service('sharedProperties', function () {
         },
         setactualUser: function(userId) {
             actualUser = userId;
+        },
+        getUserIsloged: function () {
+            return userIsloged;
+        },
+        setUserIsloged: function(userLogedFlag) {
+            userIsloged = userLogedFlag;
         }
     };
 });

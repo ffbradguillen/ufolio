@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('homeController',
-    function ($scope, UsuarioService, sharedProperties) {
+    function ($scope, $location, UsuarioService, sharedProperties) {
 
         $scope.listarUsuarios = function () {
             UsuarioService.listarUsuarios(function (response) {
