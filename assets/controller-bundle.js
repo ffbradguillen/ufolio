@@ -26,9 +26,25 @@ app.controller('userProfileController',
     }
 );
 
-var div2Controller = angular.module('app').controller('div2Controller', function ($scope) {
-    $scope.variableDiv2 = 'this is a div2 variable';
-});
+app.controller('registerUserController',
+    function ($scope, UsuarioService, sharedProperties) {
+
+        $scope.registrarUsuario = function () {
+            var body = {
+                "nombre *": "Brad",
+                "apellidos *": "Guillen",
+                "facultad": "ingenieria",
+                "carrera": "informatica",
+                "correo*": "bradguillen@gmail.com",
+                "contrasena*": "asd"
+            };
+
+            UsuarioService.registrarUsuario(body, function (response) {
+                return response;
+            });
+        }
+    }
+);
 
 var div3Controller = angular.module('app').controller('div3Controller', function ($scope) {
     $scope.variableDiv3 = 'this is a div3 variable';

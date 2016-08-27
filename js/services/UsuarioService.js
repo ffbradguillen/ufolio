@@ -18,8 +18,8 @@ app.service('UsuarioService', function ($http, URLS) {
             });
     }
 
-    this.registrar = function (data, callback) {
-        $http.post(URLS.backendURL + URLS.usuario.registrar)
+    this.registrarUsuario = function (data, callback) {
+        $http.post(URLS.backendURL + URLS.usuario.registrar, data)
             .then(function (response) {
                 if (response.data && response.data.valido) {
                     return callback(response.data);

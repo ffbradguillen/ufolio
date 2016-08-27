@@ -1,7 +1,7 @@
 var  controllersList = [
   'js/controllers/homeController.js',
   'js/controllers/userProfileController.js',
-  'js/controllers/div2Controller.js',
+  'js/controllers/registerUserController.js',
   'js/controllers/div3Controller.js',
 ];
 
